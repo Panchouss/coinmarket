@@ -19,7 +19,8 @@ const App = () => {
   const [currencyData, setCurrencyData] = useState(null)
 
   const fetchCurrencies = () => {
-    axios.get('http://127.0.0.1:8000/cryptocurrencies').then(r => {
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+    axios.get(`${apiUrl}/cryptocurrencies`).then(r => {
       const currenciesResponse = r.data
       const menuItems = [
         getItem('Список криптовалют', 'g1', null,
@@ -34,7 +35,8 @@ const App = () => {
   }
 
   const fetchCurrency = () => {
-    axios.get(`http://127.0.0.1:8000/cryptocurrencies/${currencyId}`).then(r => {
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+    axios.get(`${apiUrl}/cryptocurrencies/${currencyId}`).then(r => {
       setCurrencyData(r.data)
     })
   }
