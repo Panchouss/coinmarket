@@ -19,7 +19,7 @@ const App = () => {
   const [currencyData, setCurrencyData] = useState(null)
 
   const fetchCurrencies = () => {
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://silver-yodel-9gvq4rv74pv3774q-8000.app.github.dev';
     axios.get(`${apiUrl}/cryptocurrencies`).then(r => {
       const currenciesResponse = r.data
       const menuItems = [
@@ -35,7 +35,7 @@ const App = () => {
   }
 
   const fetchCurrency = () => {
-    const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+    const apiUrl = import.meta.env.VITE_API_URL || 'https://silver-yodel-9gvq4rv74pv3774q-8000.app.github.dev';
     axios.get(`${apiUrl}/cryptocurrencies/${currencyId}`).then(r => {
       setCurrencyData(r.data)
     })
