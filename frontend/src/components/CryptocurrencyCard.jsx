@@ -17,17 +17,17 @@ function CryptocurrencyCard(props) {
       <Card
         title={
           <div className="flex items-center gap-3">
-            <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${currency.id}.png`} alt='logo' width="50"/>
-            <p className="text-3xl">{currency.name}</p>
+            <img src={`https://s2.coinmarketcap.com/static/img/coins/64x64/${currency.id}.png`} alt='logo' className="w-10 h-10"/>
+            <p className="text-lg md:text-2xl">{currency.name}</p>
           </div>
         }
-        bordered={false}
-        style={{
-          width: 700,
-          height: 340,
-          'box-shadow': '0 3px 10px rgb(0,0,0,0.2)',
-        }}
-        className="text-2xl"
+        variant="borderless"
+        // style={{
+        //   width: 700,
+        //   height: 340,
+        //   'box-shadow': '0 3px 10px rgb(0,0,0,0.2)',
+        // }}
+        className="w-full max-w-md mx-auto text-sm md:text-xl shadow-lg rounded-2xl"
       >
         <p>Текущая цена: {formattedPrice}$</p>
         <span>Изменение цены за 24 часа: </span>
