@@ -23,10 +23,10 @@ const App = () => {
 
   const [cache, setCache] = useState({});
 
-  const apiUrl = import.meta.env.VITE_API_URL || 'https://silver-yodel-9gvq4rv74pv3774q-8000.app.github.dev';
+  const apiUrl = import.meta.env.VITE_API_URL || 'https://psychic-space-bassoon-wq69jp6r6vxfpg9-8000.app.github.dev';
 
   const fetchCurrencies = () => {
-    axios.get(`https://fictional-dollop-p5vgq4vjvp6c69qj-8000.app.github.dev/cryptocurrencies`).then(r => {
+    axios.get(`https://psychic-space-bassoon-wq69jp6r6vxfpg9-8000.app.github.dev/cryptocurrencies`).then(r => {
       const currenciesResponse = r.data
       const menuItems = [
         getItem('Список криптовалют', 'g1', null,
@@ -51,7 +51,7 @@ const App = () => {
       setCurrencyData(cache[id]);
       return;
     }
-    axios.get(`https://fictional-dollop-p5vgq4vjvp6c69qj-8000.app.github.dev/cryptocurrencies/${id}`)
+    axios.get(`https://psychic-space-bassoon-wq69jp6r6vxfpg9-8000.app.github.dev/cryptocurrencies/${id}`)
       .then(r => {
         const data = r.data;
         setCurrencyData(data);
@@ -68,7 +68,7 @@ const App = () => {
   const u = tg?.initDataUnsafe?.user;
   if (!u) return;                       // нет данных – ничего не делаем
 
-  axios.post(`https://fictional-dollop-p5vgq4vjvp6c69qj-8000.app.github.dev/adduser`, {  // ← правильный путь
+  axios.post(`${apiUrl}/adduser`, {
     tg_id: u.id,
     username: u.username || `${u.first_name || ''} ${u.last_name || ''}`.trim()
   }).catch(() => {});

@@ -1,0 +1,16 @@
+# Environment files
+.env
+*.env
+
+# Backend
+backend/
+.venv/
+.idea/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.firebase/
+
+# README
+README*
